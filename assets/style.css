@@ -1,0 +1,322 @@
+/* Resetear estilos por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Barra de navegación fija */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  box-shadow: none;
+  z-index: 1000;
+}
+
+/* Fondo oscuro y estilos generales */
+body {
+  background-color: #222;
+  color: white;
+  font-family: sans-serif;
+}
+
+/* Estilos generales para todas las secciones */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  scroll-margin-top: 60px;
+}
+
+/* Contenedor del menú */
+.nav__container {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Botón del menú hamburguesa */
+.nav-toggle {
+  display: none; /* Ocultar por defecto en pantallas grandes */
+  background: none;
+  border: none;
+  color: #f0f0f0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-toggle:hover {
+  color: #00c6ff;
+}
+
+/* Lista de enlaces */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Enlaces */
+.nav-links a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto hover */
+.nav-links a:hover {
+  color: #00c6ff;
+  transform: translateY(-2px);
+  display: inline-block;
+}
+
+/* Contenedor para centrar el contenido */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos generales para h2 dentro de .container */
+.container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-bottom: 40px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+/* Efecto decorativo: línea debajo del título */
+.container h2::after {
+  content: "";
+  display: block;
+  width: 250px;
+  height: 3px;
+  background-color: #00c6ff;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Sección de inicio */
+.home {
+  background-image: url(img/montaña.jpg);
+  background-size: cover; /* Cubre toda la sección */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que se repita */
+  position: relative; /* Para el overlay */
+}
+
+.home h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #00c6ff;
+}
+
+.home p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+}
+
+/* Overlay para mejorar legibilidad del texto */
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay oscuro semitransparente */
+  z-index: 1; /* Debajo del contenido */
+}
+
+.home .container {
+  position: relative; /* Asegura que el contenido esté encima del overlay */
+  z-index: 2; /* Encima del overlay */
+}
+
+/* Contenedor de iconos de redes sociales */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+/* Estilos para los enlaces de redes sociales */
+.social-links a {
+  color: #f0f0f0;
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto hover para los iconos */
+.social-links a:hover {
+  /* color: #00c6ff; Comentado, puedes activarlo si quieres */
+  transform: translateY(-3px);
+  display: inline-block;
+}
+
+/* Secciones específicas */
+.about,
+.projects,
+.contact {
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+
+/* Sección Acerca de mí */
+.about {
+  padding: 80px 0; /* Espaciado para que no quede pegada al borde */
+}
+
+/* Estilos para el párrafo en .about */
+.about p {
+  max-width: 800px; /* Ancho máximo para mejor legibilidad */
+  margin: 0 auto; /* Centrar el párrafo */
+  font-size: 1.1rem;
+  line-height: 1.6; /* Espaciado entre líneas para legibilidad */
+  color: #e0e0e0;
+  text-align: center;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Mostrar el botón del menú hamburguesa */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Estilos para los enlaces en móviles */
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 80px; /* Debajo de la barra de navegación */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay oscuro semitransparente */
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%); /* Iniciar fuera de la pantalla (arriba) */
+    opacity: 0; /* Oculto por defecto */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Animación suave */
+    pointer-events: none; /* Evitar clics cuando está oculto */
+  }
+
+  /* Mostrar los enlaces cuando el menú está abierto */
+  .nav__container.nav-open .nav-links {
+    transform: translateY(0); /* Desplazar hacia abajo */
+    opacity: 1; /* Visible */
+    pointer-events: auto; /* Permitir clics */
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .container h2::after {
+    width: 40px;
+    height: 2px;
+  }
+
+  .social-links {
+    gap: 15px;
+    margin: 15px 0;
+  }
+
+  .social-links a {
+    font-size: 1.8rem;
+  }
+
+  .home h1 {
+    font-size: 2.5rem;
+  }
+
+  .home p {
+    font-size: 1.1rem;
+  }
+
+  .home h1 {
+    font-size: 2.5rem;
+  }
+
+  .about {
+    padding: 60px 0; /* Reducir padding en móviles */
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__container {
+    padding: 15px;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .container h2::after {
+    width: 60px; /* Ajustado para mantener consistencia */
+  }
+
+  .social-links {
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .social-links a {
+    font-size: 1.5rem;
+  }
+  .home h1 {
+    font-size: 2rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+  .about {
+    padding: 40px 0; /* Aún más reducido en pantallas pequeñas */
+  }
+
+  .about p {
+    font-size: 0.9rem;
+  }
+}
