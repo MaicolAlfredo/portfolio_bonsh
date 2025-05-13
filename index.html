@@ -27,7 +27,7 @@
           <li><a href="#home">Inicio</a></li>
           <li><a href="#about">Acerca de mí</a></li>
           <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#contact">Contacto</a></li>
+          <!-- <li><a href="#contact">Contacto</a></li> -->
         </ul>
       </nav>
     </header>
@@ -80,24 +80,75 @@
     <section id="projects" class="projects">
       <div class="container">
         <h2>Mis Proyectos</h2>
-        <div class="project">
-          <h3>Proyecto 1</h3>
-          <p>Descripción breve del proyecto.</p>
-          <a href="enlace-al-proyecto">Ver proyecto</a>
+        <div class="project-grid">
+          <div class="project-card">
+            <!-- proyecto 1 -->
+            <img
+              src="assets/img/react-paint.PNG"
+              alt="Imagen del proyecto"
+              class="project-img"
+            />
+            <div class="project-content">
+              <h3>Proyecto: React Paint</h3>
+              <div class="tech-icons">
+                <img
+                  src="assets/img/html-img.png"
+                  alt="HTML"
+                  title="HTML5"
+                  class="tech-img"
+                />
+                <img
+                  src="assets/img/css-img.png"
+                  alt="CSS"
+                  title="CSS"
+                  class="tech-img"
+                />
+                <img
+                  src="assets/img/js-img.png"
+                  alt="JavaScript"
+                  title="JavaScript"
+                  class="tech-img"
+                />
+                <img
+                  src="assets/img/react-img.png"
+                  alt="React"
+                  title="React"
+                  class="tech-img"
+                />
+              </div>
+              <p>Una aplicación tipo Paint inspirada en un proyecto de Midudev, originalmente construido en JavaScript. La reconstrui con React para practicar componentes reutilizables y gestión de estado. </p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/MaicolAlfredo/paint-react-proyect"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn"
+                  >Ver en GitHub</a
+                >
+                <a
+                  href="https://maicolalfredo.github.io/paint-react-proyect/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn"
+                  >Ver proyecto</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
         <!-- Agrega más proyectos aquí -->
       </div>
     </section>
 
-    <!-- Sección de Contacto -->
+    <!-- Sección de Contacto 
     <section id="contact" class="contact">
       <div class="container">
         <p>Correo: tuemail@example.com</p>
         <h2>Contacto</h2>
         <p>LinkedIn: <a href="tu-enlace-de-linkedin">Mi perfil</a></p>
-        <!-- Puedes agregar un formulario de contacto más adelante -->
+        Puedes agregar un formulario de contacto más adelante 
       </div>
-    </section>
+    </section> -->
 
     <script src="assets/index.js"></script>
     <!-- Enlace al archivo JavaScript -->

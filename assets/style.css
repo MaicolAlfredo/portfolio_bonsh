@@ -203,6 +203,79 @@ section {
   text-align: center;
 }
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: (repeat(auto-fit, minmax(300px, 1fr)));
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+}
+
+.project-card {
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 350px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  background-color: #222;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  font-size: 1.5rem;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.tech-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.project-content p {
+  font-size: 0.8rem;
+  color: #e0e0e0;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00c6ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0096cc;
+}
+
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 768px) {
   /* Mostrar el botón del menú hamburguesa */
@@ -277,6 +350,21 @@ section {
   .about p {
     font-size: 1rem;
   }
+
+  .projects {
+    padding: 60px 0;
+  }
+  .project-card {
+    margin: 0 auto;
+  }
+
+  .project-img {
+    max-height: 150px;
+  }
+
+  .project-content h3 {
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -318,5 +406,31 @@ section {
 
   .about p {
     font-size: 0.9rem;
+  }
+
+  .projects {
+    padding: 40px 0;
+  }
+
+  .project-img {
+    max-height: 120px;
+  }
+
+  .project-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-content p {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+
+  .tech-img {
+    width: 18px;
+    height: 18px;
   }
 }
