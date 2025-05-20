@@ -107,6 +107,15 @@ section {
   text-transform: uppercase;
 }
 
+.container h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-bottom: 40px;
+  position: relative;
+}
+
 /* Efecto decorativo: línea debajo del título */
 .container h2::after {
   content: "";
@@ -182,8 +191,7 @@ section {
 
 /* Secciones específicas */
 .about,
-.projects,
-.contact {
+.projects {
   justify-content: flex-start;
   padding-top: 40px;
 }
@@ -191,6 +199,15 @@ section {
 /* Sección Acerca de mí */
 .about {
   padding: 80px 0; /* Espaciado para que no quede pegada al borde */
+}
+
+.about h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #00c6ff;
+  margin: 20px 0 15px;
+  text-transform: uppercase;
 }
 
 /* Estilos para el párrafo en .about */
@@ -203,28 +220,59 @@ section {
   text-align: center;
 }
 
-.projects-grid {
+/* Contenedor de imágenes de habilidades */
+.skills-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 15px auto;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+
+/* Imágenes de habilidades */
+.skill-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill-img:hover {
+  transform: scale(1.1);
+}
+
+/* Sección Proyectos */
+
+/* Cuadrícula para las tarjetas de proyectos */
+.project-grid {
   display: grid;
-  grid-template-columns: (repeat(auto-fit, minmax(300px, 1fr)));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Múltiples columnas en escritorio */
   gap: 30px;
   width: 100%;
   justify-content: center;
 }
 
+/* Estilo de cada tarjeta */
 .project-card {
   background-color: #333;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 350px;
+  width: 100%; /* Ocupa el ancho de la columna */
 }
 
+/* Efecto hover en la tarjeta */
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Imagen del proyecto */
 .project-img {
   width: 100%;
   max-height: 200px;
@@ -232,22 +280,26 @@ section {
   background-color: #222;
 }
 
+/* Contenido de la tarjeta */
 .project-content {
   padding: 20px;
 }
 
+/* Título del proyecto */
 .project-content h3 {
   font-size: 1.5rem;
   color: #f0f0f0;
   margin-bottom: 10px;
 }
 
+/* Imágenes de tecnologías */
 .tech-img {
   width: 24px;
   height: 24px;
   object-fit: contain;
 }
 
+/* Descripción del proyecto */
 .project-content p {
   font-size: 0.8rem;
   color: #e0e0e0;
@@ -255,11 +307,13 @@ section {
   margin-bottom: 15px;
 }
 
+/* Enlaces del proyecto */
 .project-links {
   display: flex;
   gap: 10px;
 }
 
+/* Estilo de los botones */
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -339,10 +393,6 @@ section {
     font-size: 1.1rem;
   }
 
-  .home h1 {
-    font-size: 2.5rem;
-  }
-
   .about {
     padding: 60px 0; /* Reducir padding en móviles */
   }
@@ -354,8 +404,14 @@ section {
   .projects {
     padding: 60px 0;
   }
+
+  .project-grid {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+  }
+
   .project-card {
     margin: 0 auto;
+    max-width: 100%;
   }
 
   .project-img {
@@ -393,6 +449,7 @@ section {
   .social-links a {
     font-size: 1.5rem;
   }
+
   .home h1 {
     font-size: 2rem;
   }
@@ -400,6 +457,7 @@ section {
   .home p {
     font-size: 1rem;
   }
+
   .about {
     padding: 40px 0; /* Aún más reducido en pantallas pequeñas */
   }
